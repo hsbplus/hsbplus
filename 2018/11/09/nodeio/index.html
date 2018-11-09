@@ -3,19 +3,19 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>同步、异步、阻塞、非阻塞 | 烧饼plus</title>
+  <title>初解同步、异步、阻塞、非阻塞 | 烧饼plus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="同步同步就是应用程序发出调用后需要等待返回调用结果才继续往下执行。 异步异步就是应用程序发出调用后不需要等待返回结构，继续后续的操作。一般可以通过轮询或事件来提升性能。但是相对来说，通过轮询的方式还是比较低效的。 阻塞I/O阻塞I/O最大的特点就是需要等待系统内核完成所有的操作，整个调用才结束，最终返回数据。 非阻塞I/O非阻塞I/O对于与阻塞I/O最明显的就是应用进行调用的时候立即返回。">
+  <meta name="description" content="同步同步就是应用程序发出调用后需要等待返回调用结果才继续往下执行。 异步异步就是应用程序发出调用后不需要等待返回结构，继续后续的操作。一般可以通过轮询或事件来提升性能。但是相对来说，通过轮询的方式还是比较低效的。 阻塞I/O阻塞I/O最大的特点就是需要等待系统内核完成所有的操作，整个调用才结束，最终返回数据。 非阻塞I/O非阻塞I/O对于与阻塞I/O最明显的就是应用进行调用的时候立即返回。 场景：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="同步、异步、阻塞、非阻塞">
+<meta property="og:title" content="初解同步、异步、阻塞、非阻塞">
 <meta property="og:url" content="http://yoursite.com/2018/11/09/nodeio/index.html">
 <meta property="og:site_name" content="烧饼plus">
-<meta property="og:description" content="同步同步就是应用程序发出调用后需要等待返回调用结果才继续往下执行。 异步异步就是应用程序发出调用后不需要等待返回结构，继续后续的操作。一般可以通过轮询或事件来提升性能。但是相对来说，通过轮询的方式还是比较低效的。 阻塞I/O阻塞I/O最大的特点就是需要等待系统内核完成所有的操作，整个调用才结束，最终返回数据。 非阻塞I/O非阻塞I/O对于与阻塞I/O最明显的就是应用进行调用的时候立即返回。">
+<meta property="og:description" content="同步同步就是应用程序发出调用后需要等待返回调用结果才继续往下执行。 异步异步就是应用程序发出调用后不需要等待返回结构，继续后续的操作。一般可以通过轮询或事件来提升性能。但是相对来说，通过轮询的方式还是比较低效的。 阻塞I/O阻塞I/O最大的特点就是需要等待系统内核完成所有的操作，整个调用才结束，最终返回数据。 非阻塞I/O非阻塞I/O对于与阻塞I/O最明显的就是应用进行调用的时候立即返回。 场景：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-09T13:33:28.752Z">
+<meta property="og:updated_time" content="2018-11-09T15:08:03.463Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="同步、异步、阻塞、非阻塞">
-<meta name="twitter:description" content="同步同步就是应用程序发出调用后需要等待返回调用结果才继续往下执行。 异步异步就是应用程序发出调用后不需要等待返回结构，继续后续的操作。一般可以通过轮询或事件来提升性能。但是相对来说，通过轮询的方式还是比较低效的。 阻塞I/O阻塞I/O最大的特点就是需要等待系统内核完成所有的操作，整个调用才结束，最终返回数据。 非阻塞I/O非阻塞I/O对于与阻塞I/O最明显的就是应用进行调用的时候立即返回。">
+<meta name="twitter:title" content="初解同步、异步、阻塞、非阻塞">
+<meta name="twitter:description" content="同步同步就是应用程序发出调用后需要等待返回调用结果才继续往下执行。 异步异步就是应用程序发出调用后不需要等待返回结构，继续后续的操作。一般可以通过轮询或事件来提升性能。但是相对来说，通过轮询的方式还是比较低效的。 阻塞I/O阻塞I/O最大的特点就是需要等待系统内核完成所有的操作，整个调用才结束，最终返回数据。 非阻塞I/O非阻塞I/O对于与阻塞I/O最明显的就是应用进行调用的时候立即返回。 场景：">
   
     <link rel="alternate" href="/atom.xml" title="烧饼plus" type="application/atom+xml">
   
@@ -67,7 +67,7 @@
         <section id="main"><article id="post-nodeio" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/09/nodeio/" class="article-date">
-  <time datetime="2018-11-09T13:35:46.004Z" itemprop="datePublished">2018-11-09</time>
+  <time datetime="2018-11-09T15:08:03.463Z" itemprop="datePublished">2018-11-09</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      同步、异步、阻塞、非阻塞
+      初解同步、异步、阻塞、非阻塞
     </h1>
   
 
@@ -90,11 +90,15 @@
 <h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p><code>异步就是应用程序发出调用后不需要等待返回结构，继续后续的操作。一般可以通过轮询或事件来提升性能。但是相对来说，通过轮询的方式还是比较低效的。</code></p>
 <h3 id="阻塞I-O"><a href="#阻塞I-O" class="headerlink" title="阻塞I/O"></a>阻塞I/O</h3><p><code>阻塞I/O最大的特点就是需要等待系统内核完成所有的操作，整个调用才结束，最终返回数据。</code></p>
 <h3 id="非阻塞I-O"><a href="#非阻塞I-O" class="headerlink" title="非阻塞I/O"></a>非阻塞I/O</h3><p><code>非阻塞I/O对于与阻塞I/O最明显的就是应用进行调用的时候立即返回。</code></p>
-
+<h4 id="场景：潘金莲偶遇西门庆"><a href="#场景：潘金莲偶遇西门庆" class="headerlink" title="场景：潘金莲偶遇西门庆"></a>场景：潘金莲偶遇西门庆</h4><p><code>在一个夜黑风高的晚上，刚结束上半场准备赶下半场的西门庆突然闪现在潘金莲的楼下，因为光线不好，加上潘金莲速眼神不太好，以为楼下的西门庆就是那个网红高富帅贝克汉姆，于是开始犯花痴，按不住内心的躁动开始YY，她以为手里拿着的梳子是一多鲜花，于是一不小心，手一抖，把梳子砸向西门庆。谁知道西门庆一向身体比较脆弱，一下子把西门庆砸蒙了，以为楼上住的是白富美梦露。于是故事从这里开始了。</code></p>
+<p><code>此时的西门庆正准备赶到下半场去撩小姐姐，但是眼前这位白富美确实是让他感觉到美到让他窒息，于是西门庆放了个飞吻示意潘金莲。潘金莲收到这沉甸甸的飞吻后，决定写一封10万字的情书跟西门庆告白。</code><br><code>此时的西门庆（应用程序）有两个选择，一个是等潘金莲的10万字的情书写完(同步)，要么就是继续下半场（异步），每隔一段时间回来看接收一下情书（轮询）或者给潘金莲留个电话，等她写完后直接给他电话(事件通知)。</code></p>
+<p><code>对于潘金莲（系统内核）来说，因为情书10万字太长，她也有两个选择，等把自己的情书写完（阻塞）后交给西门庆后才让西门庆走。或者她让西门庆先去撩小姐姐（非阻塞），每次回来的时候（异步），潘金莲会把自己目前写好都扔给西门庆。</code></p>
+<h4 id="同步阻塞"><a href="#同步阻塞" class="headerlink" title="同步阻塞"></a>同步阻塞</h4><p><code>西门庆被眼前的错觉所迷惑，以为眼前的这位就是白富美梦露，于是送了个飞吻后等潘金莲把情书写完拿到情书后再离开</code></p>
+<h4 id="同步非阻塞"><a href="#同步非阻塞" class="headerlink" title="同步非阻塞"></a>同步非阻塞</h4><h4 id="异步阻塞"><a href="#异步阻塞" class="headerlink" title="异步阻塞"></a>异步阻塞</h4><h4 id="异步非阻塞"><a href="#异步非阻塞" class="headerlink" title="异步非阻塞"></a>异步非阻塞</h4>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/09/nodeio/" data-id="cjoa530960000gjfy6m1driuy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/09/nodeio/" data-id="cjoa67cr70000defyqluo3dbv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -133,7 +137,7 @@
       <ul>
         
           <li>
-            <a href="/2018/11/09/nodeio/">同步、异步、阻塞、非阻塞</a>
+            <a href="/2018/11/09/nodeio/">初解同步、异步、阻塞、非阻塞</a>
           </li>
         
       </ul>
