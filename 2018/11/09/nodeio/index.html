@@ -3,15 +3,19 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>烧饼plus</title>
+  <title>同步、异步、阻塞、非阻塞 | 烧饼plus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="烧饼plus">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="同步同步就是应用程序发出调用后需要等待返回调用结果才继续往下执行。 异步异步就是应用程序发出调用后不需要等待返回结构，继续后续的操作。一般可以通过轮询或事件来提升性能。但是相对来说，通过轮询的方式还是比较低效的。 阻塞I/O阻塞I/O最大的特点就是需要等待系统内核完成所有的操作，整个调用才结束，最终返回数据。 非阻塞I/O非阻塞I/O对于与阻塞I/O最明显的就是应用进行调用的时候立即返回。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="同步、异步、阻塞、非阻塞">
+<meta property="og:url" content="http://yoursite.com/2018/11/09/nodeio/index.html">
 <meta property="og:site_name" content="烧饼plus">
+<meta property="og:description" content="同步同步就是应用程序发出调用后需要等待返回调用结果才继续往下执行。 异步异步就是应用程序发出调用后不需要等待返回结构，继续后续的操作。一般可以通过轮询或事件来提升性能。但是相对来说，通过轮询的方式还是比较低效的。 阻塞I/O阻塞I/O最大的特点就是需要等待系统内核完成所有的操作，整个调用才结束，最终返回数据。 非阻塞I/O非阻塞I/O对于与阻塞I/O最明显的就是应用进行调用的时候立即返回。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-09T13:33:28.752Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="烧饼plus">
+<meta name="twitter:title" content="同步、异步、阻塞、非阻塞">
+<meta name="twitter:description" content="同步同步就是应用程序发出调用后需要等待返回调用结果才继续往下执行。 异步异步就是应用程序发出调用后不需要等待返回结构，继续后续的操作。一般可以通过轮询或事件来提升性能。但是相对来说，通过轮询的方式还是比较低效的。 阻塞I/O阻塞I/O最大的特点就是需要等待系统内核完成所有的操作，整个调用才结束，最终返回数据。 非阻塞I/O非阻塞I/O对于与阻塞I/O最明显的就是应用进行调用的时候立即返回。">
   
     <link rel="alternate" href="/atom.xml" title="烧饼plus" type="application/atom+xml">
   
@@ -60,9 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-nodeio" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-nodeio" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/09/nodeio/" class="article-date">
   <time datetime="2018-11-09T13:35:46.004Z" itemprop="datePublished">2018-11-09</time>
@@ -75,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/09/nodeio/">同步、异步、阻塞、非阻塞</a>
+    <h1 class="article-title" itemprop="name">
+      同步、异步、阻塞、非阻塞
     </h1>
   
 
@@ -98,10 +100,9 @@
     </footer>
   </div>
   
-</article>
-
-
+    
   
+</article>
 
 </section>
         
